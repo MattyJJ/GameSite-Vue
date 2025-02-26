@@ -6,7 +6,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: 'GameSite-Vue',
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {

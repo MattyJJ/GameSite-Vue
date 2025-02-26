@@ -1,15 +1,19 @@
 <style scoped>
 #nav-bar {
+  position: fixed;
   list-style: none;
   margin: 0;
   padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .nav-item {
   display: inline-block;
   background-color: darkslategray;
 
-  padding: 2%;
+  padding: 15px 15px;
 }
 
 .nav-item:hover {
@@ -18,6 +22,10 @@
 
 .nav-text {
   display: inline;
+  width: 100%;
+  height: 100%;
+
+  padding: 15px 15px;
 }
 </style>
 
@@ -25,8 +33,9 @@
   <header></header>
   <main>
     <ul id="nav-bar">
-      <RouterLink class="nav-text" to="/"><li class="nav-item">Home</li></RouterLink>
-      <RouterLink class="nav-text" to="/snake"> <li class="nav-item">Snake</li></RouterLink>
+      <li class="nav-item"><RouterLink class="nav-text" to="/">Home</RouterLink></li>
+      <li class="nav-item"><RouterLink class="nav-text" to="/snake">Snake</RouterLink></li>
+      <li class="nav-item"><RouterLink class="nav-text" to="/sokoban">Sokoban</RouterLink></li>
     </ul>
   </main>
 </template>

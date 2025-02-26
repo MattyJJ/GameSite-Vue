@@ -19,19 +19,18 @@
 .nav-text {
   display: inline;
 }
-
-.nav-text:hover {
-}
 </style>
 
 <template>
   <header></header>
   <main>
     <ul id="nav-bar">
-      <a class="nav-text" href="/"><li class="nav-item">Home</li></a>
-      <a class="nav-text" href="snake"> <li class="nav-item">Snake</li></a>
+      <RouterLink class="nav-text" to="/"><li class="nav-item">Home</li></RouterLink>
+      <RouterLink class="nav-text" to="/snake"> <li class="nav-item">Snake</li></RouterLink>
     </ul>
   </main>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { RouterLink } from 'vue-router'
+</script>

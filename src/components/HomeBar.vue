@@ -28,8 +28,8 @@
   <header></header>
   <main>
     <ul id="nav-bar">
-      <a class="nav-text" href="../views/HomeView.vue"><li class="nav-item">Home</li></a>
-      <a class="nav-text" href="../views/SnakeView.vue"> <li class="nav-item">Snake</li></a>
+      <a class="nav-text" href="/"><li class="nav-item">Home</li></a>
+      <a class="nav-text" href="snake"> <li class="nav-item">Snake</li></a>
     </ul>
   </main>
 </template>

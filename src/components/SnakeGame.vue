@@ -35,6 +35,17 @@ class Graphics {
     )
   }
 
+  public DrawText(
+    position: Vector2,
+    text: string,
+    color: string = 'white',
+    size: number = 16,
+  ): void {
+    this.context.fillStyle = color
+    this.context.font = `${size}px sans-serif`
+    this.context.fillText(text, position.x, position.y)
+  }
+
   public Clear() {
     //this.context.fillStyle = color
     this.context.clearRect(0, 0, CANVAS_W, CANVAS_H)
@@ -196,6 +207,8 @@ class Game {
 
     this.snake.Render()
     this.apple.Render()
+
+    Graphics.instance.DrawText(new Vector2(0, 20), `Score: ${this.snake.score}`, 'white', 20)
   }
 
   public QueueMove(dir: Vector2): void {

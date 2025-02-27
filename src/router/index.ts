@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { site_name } from '../site_config.json'
 
 import HomeView from '../views/HomeView.vue'
 
@@ -10,21 +11,31 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        title: `${site_name} - Home`,
+      },
     },
     {
       path: '/snake',
       name: 'snake',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/SnakeView.vue'),
+      meta: {
+        title: `${site_name} - Snake`,
+      },
     },
     {
       path: '/sokoban',
       name: 'sokoban',
       component: () => import('../views/SokobanView.vue'),
+      meta: {
+        title: `${site_name} - Sokoban`,
+      },
     },
   ],
+})
+
+router.beforeEach((to, from) => {
+  document.title = (to.meta.title as string) || (site_name as string)
 })
 
 export default router

@@ -2,10 +2,10 @@
 import { RouterView } from 'vue-router'
 </script>
 
+<script lang="ts"></script>
+
 <template>
-  <header>
-    <title>Game Site</title>
-  </header>
+  <header></header>
 
   <RouterView />
 </template>

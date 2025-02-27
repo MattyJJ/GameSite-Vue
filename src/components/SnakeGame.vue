@@ -4,7 +4,9 @@
   <header></header>
 
   <main>
-    <canvas id="game-canvas"></canvas>
+    <div id="game-div">
+      <canvas id="game-canvas"></canvas>
+    </div>
   </main>
 </template>
 
@@ -27,12 +29,17 @@ class Graphics {
 
   public DrawTile(position: Vector2, color: string): void {
     this.context.fillStyle = color
-    this.context.fillRect(
-      position.x * TILE_SIZE,
-      position.y * TILE_SIZE,
-      TILE_SIZE - 5,
-      TILE_SIZE - 5,
-    )
+    this.context.fillRect(position.x * TILE_SIZE, position.y * TILE_SIZE, TILE_SIZE, TILE_SIZE)
+  }
+
+  public DrawRect(position: Vector2, size: Vector2, color: string = 'white') {
+    this.context.fillStyle = color
+    this.context.fillRect(position.x, position.y, size.x, size.y)
+  }
+
+  public DrawImage(position: Vector2, image: CanvasImageSource, size: Vector2) {
+    this.context.fillStyle = 'white'
+    this.context.drawImage(image, position.x, position.y, size.x, size.y)
   }
 
   public DrawText(
@@ -204,6 +211,8 @@ class Game {
 
   public Render(): void {
     Graphics.instance.Clear()
+
+    Graphics.instance.DrawRect(new Vector2(0, 0), new Vector2(CANVAS_W, CANVAS_H), 'grey')
 
     this.snake.Render()
     this.apple.Render()

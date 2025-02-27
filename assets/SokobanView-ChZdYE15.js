@@ -1,0 +1,1 @@
+import{d as n,c as o,a,b as r,H as t,F as s,o as l}from"./index-xIdg0r8G.js";const p=n({__name:"SokobanView",setup(m){return(u,e)=>(l(),o(s,null,[e[0]||(e[0]=a("header",null,null,-1)),a("main",null,[r(t)])],64))}});export{p as default};
